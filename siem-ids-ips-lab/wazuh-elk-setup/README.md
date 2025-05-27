@@ -8,6 +8,7 @@ docker-compose up -d
 
 include $RULE_PATH/local.rules
 output alert_fast: stdout
+
 5. snort-config/local.rules
 
 alert tcp any any -> any 22 (msg:"Possible SSH Brute Force"; flags:S; threshold:type threshold, track by_src, count 5, seconds 60; sid:1000001;)
